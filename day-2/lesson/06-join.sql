@@ -90,7 +90,7 @@ INSERT INTO review_username VALUES (12, 'MayaForever');
 -- We've seen basic joins, but not discussed them in much detail.
 -- Joins have 2 basic kinds of modifiers:
 --   * Inner vs Outer
---   * Right vs Left vs Full
+--   * Right vs Left
 
 -- Inner joins only return records that have a match on both sides of the ON clause.
 -- When no keyword is used, an inner join is performed. In this case one of our books

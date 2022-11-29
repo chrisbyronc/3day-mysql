@@ -1,6 +1,6 @@
 # Exercise: Restore and Explore Adventure Works
 
-In the data folder of this repo you'll find a file called `adventureworks_backup`. This is a sql file of a mock database for a fake company called Adventure Works. The Adventure Works database is [maintained by Microsoft](https://sourceforge.net/projects/awmysql/) as a tool for practicing SQL on a realistic dataset for folks who might not otherwise have access to it. 
+In the data folder of this repo you'll find a file called `AWBackup.sql`. This is a sql file of a mock database for a fake company called Adventure Works. The Adventure Works database is [maintained by Microsoft](https://sourceforge.net/projects/awmysql/) as a tool for practicing SQL on a realistic dataset for folks who might not otherwise have access to it. 
 
 We'll use the Adventure Works database throughout this workshop. Your first task is to restore and explore the database using what you already know about SQL.
 

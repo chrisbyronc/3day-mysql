@@ -36,7 +36,7 @@ FROM workorder;
 
 This might be harder than it seems at first...
 
-Hint 1: in MySQL you can use `CHAR(13, 10)` to represent a linebreak in a string. 
+Hint 1: in MySQL you can use `CHAR(13)` to represent a linebreak in a string. 
 
 Hint 2: the coalesce function might help as well: [https://www.w3schools.com/Sql/func_mysql_coalesce.asp](https://www.w3schools.com/Sql/func_mysql_coalesce.asp)
 
@@ -44,7 +44,7 @@ Hint 3: You need to use a join, because some of the information you need is in t
 
 ```sql
 SELECT
-CONCAT_WS(CHAR(13, 10),
+CONCAT_WS(CHAR(13),
     CONCAT_WS(' ', p.title, p.firstname, p.middlename, p.lastname, p.suffix),
     a.addressline1,
     a.addressline2,

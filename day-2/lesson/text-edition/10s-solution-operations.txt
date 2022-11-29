@@ -4,7 +4,7 @@
 
 ```sql
 SELECT 
-  CONCAT_WS(' ', title, firstname, middlename, lastname, suffix) as fullname,
+  CONCAT_WS(' ', title, firstname, middlename, lastname, suffix) AS fullname,
   lastname, -- The writeup didn't ask for these, but it helps verify the results.
   length(lastname) 
 FROM contact
@@ -17,7 +17,7 @@ WHERE length(lastname) > 10;
 SELECT
   orderqty,
   scrappedqty,
-  cast(scrappedqty AS float) / orderqty AS scrapped_precent
+  CAST(scrappedqty AS float) / orderqty AS scrapped_precent
 FROM workorder;
 ```
 
@@ -27,7 +27,7 @@ FROM workorder;
 SELECT
   orderqty,
   scrappedqty,
-  cast(scrappedqty AS float) / orderqty AS scrapped_precent,
+  CAST(scrappedqty AS float) / orderqty AS scrapped_precent,
   enddate-startdate AS time_to_process
 FROM workorder;
 ```

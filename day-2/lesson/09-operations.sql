@@ -7,7 +7,7 @@ SELECT
   salesorderid,
   unitprice,
   unitpricediscount,
-  unitprice - (unitpricediscount*unitprice) as discounted_unit_price,
+  unitprice - (unitpricediscount*unitprice) AS discounted_unit_price,
   orderqty,
   (unitprice - (unitpricediscount*unitprice))*orderqty as total_price,
   orderqty > 5 as "Ordered more than 5"
@@ -27,20 +27,20 @@ SELECT
 	middlename,
 	lastname,
 	suffix,
-	firstname || ' ' || lastname as firstlast,
-	concat(firstname, ' ', middlename, ' ', lastname) as firstmiddlelast,
-	concat_ws(' ', title, firstname, middlename, lastname, suffix) as fullname
+	firstname || ' ' || lastname AS firstlast,
+	concat(firstname, ' ', middlename, ' ', lastname) AS firstmiddlelast,
+	CONCAT_WS(' ', title, firstname, middlename, lastname, suffix) AS fullname
 FROM contact
 limit 500;
 
 -- Here are some other useful string processing functions...
 SELECT 
-	concat_ws(' ', title, firstname, middlename, lastname, suffix) as fullname,
-	length(concat_ws(' ', title, firstname, middlename, lastname, suffix)) as fullname_length,
-	substring(concat_ws(' ', title, firstname, middlename, lastname, suffix), 1, 5) as first_5_chars_of_fullname,
-	substring(concat_ws(' ', title, firstname, middlename, lastname, suffix), 5, 4) as chars_5_to_9,
-	UPPER(firstname) as firstname_all_caps,
-	LOWER(firstname) as firstname_lower,
+	CONCAT_WS(' ', title, firstname, middlename, lastname, suffix) AS fullname,
+	length(CONCAT_WS(' ', title, firstname, middlename, lastname, suffix)) AS fullname_length,
+	substring(CONCAT_WS(' ', title, firstname, middlename, lastname, suffix), 1, 5) AS first_5_chars_of_fullname,
+	substring(CONCAT_WS(' ', title, firstname, middlename, lastname, suffix), 5, 4) AS chars_5_to_9,
+	UPPER(firstname) AS firstname_all_caps,
+	LOWER(firstname) AS firstname_lower,
 	LOCATE('D', UPPER(firstname)) position_of_first_d
 FROM contact
 LIMIT 500;
@@ -51,9 +51,9 @@ SELECT 1.0/2.0; -- this returns 0.5
 -- This is because "integer division" always truncates the result 
 -- by rounding down to a whole number (always DOWN, never up). 
 -- If you want to perform division with columns that have integer types,
--- you need to cast at least one of them first:
-SELECT cast(1 AS FLOAT) / 2;
-SELECT 1 / cast(2 AS FLOAT);
+-- you need to CAST at least one of them first:
+SELECT CAST(1 AS FLOAT) / 2;
+SELECT 1 / CAST(2 AS FLOAT);
 
 -- Micro-Exercise: Examine the table purchaseorderdetail, then write a query that computes the following:
 --  * The initial price (combine unitprice and orderqty)

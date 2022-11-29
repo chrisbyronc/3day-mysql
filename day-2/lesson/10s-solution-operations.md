@@ -36,7 +36,7 @@ FROM workorder;
 
 This might be harder than it seems at first...
 
-Hint 1: in Postgres you can use `E'\n'` to represent a linebreak in a string. 
+Hint 1: in MySQL you can use `CHAR(13, 10)` to represent a linebreak in a string. 
 
 Hint 2: the coalesce function might help as well: [https://www.w3schools.com/Sql/func_mysql_coalesce.asp](https://www.w3schools.com/Sql/func_mysql_coalesce.asp)
 
@@ -44,7 +44,7 @@ Hint 3: You need to use a join, because some of the information you need is in t
 
 ```sql
 SELECT
-CONCAT_WS(E'\n',
+CONCAT_WS(CHAR(13, 10),
     CONCAT_WS(' ', p.title, p.firstname, p.middlename, p.lastname, p.suffix),
     a.addressline1,
     a.addressline2,
@@ -52,8 +52,8 @@ CONCAT_WS(E'\n',
     cr.name
 ) AS "Full Address",
 at.name
-FROM contact as p
-JOIN vendorcontact as vc
+FROM contact AS p
+JOIN vendorcontact AS vc
 JOIN vendoraddress bea ON bea.vendorid = vc.vendorid
 JOIN person.address a ON bea.addressid = a.addressid
 JOIN person.stateprovince sp ON sp.stateprovinceid = a.stateprovinceid

@@ -32,7 +32,7 @@ ORDER BY
 /*
 * Notes:
     * `count(1)` count increments for any non-null value, but we're aggregating a non-null field (every entry in salesorderheader represents an actual sale, so we want to increment for EVERY record). So count(1) saves a small amount of computation. count(totaldue) would return the same results (and you can prove this by changing the query!)
-    * order by the aliASes doesn't work in all versions of SQL (or even all versions of Postgres). We must repeat the aggregates in older versions.
+    * order by the aliASes doesn't work in all versions of SQL (or even all versions of MySQL). We must repeat the aggregates in older versions.
 
 * We can also:
     * limit records prior to the grouping, using `where`

@@ -16,7 +16,7 @@ Write a SQL query for each of the following prompts.
 
 This might be harder than it seems at first...
 
-Hint 1: in Postgres you can use `E'\n'` to represent a linebreak as a string. 
+Hint 1: in MySQL you can use `CHAR(13, 10)` to represent a linebreak as a string. 
 
 Hint 2: the coalesce function might help as well: [https://www.w3schools.com/Sql/func_mysql_coalesce.asp](https://www.w3schools.com/Sql/func_mysql_coalesce.asp)
 

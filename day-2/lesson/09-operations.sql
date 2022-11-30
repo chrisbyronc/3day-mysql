@@ -28,7 +28,7 @@ SELECT
 	lastname,
 	suffix,
 	firstname || ' ' || lastname AS firstlast,
-	concat(firstname, ' ', middlename, ' ', lastname) AS firstmiddlelast,
+	CONCAT(firstname, ' ', middlename, ' ', lastname) AS firstmiddlelast,
 	CONCAT_WS(' ', title, firstname, middlename, lastname, suffix) AS fullname
 FROM contact
 limit 500;

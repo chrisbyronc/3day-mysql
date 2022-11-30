@@ -37,3 +37,28 @@ Agenda for today
   6. Math Operations I do, you do, we do
      1. GROUP BY
      2. HAVING
+
+
+
+What did we learn today?
+
+1. CONCAT
+2. String operations
+   1. CONCAT_WS
+   2. LOCATE
+   3. SUBSTRING
+   4. UPPER
+   5. LOWER
+   6. LENGTH
+3. Math operations
+   1. -
+   2. *
+   3. /
+   4. +
+4. Better understanding of JOIN
+   1. LEFT JOIN
+   2. INNER JOIN
+5. Datatypes
+6. DISTINCT
+7. Wildcard continued %
+8. Restored a data dump

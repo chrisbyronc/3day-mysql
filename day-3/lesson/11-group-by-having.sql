@@ -8,7 +8,7 @@
     * count,
     * sum,
     * average
-    * More: https://dev.mysql.com/doc/refman/8.0/en/numeric-functions.html
+    * More: https://dev.mysql.com/doc/refman/8.0/en/aggregate-functions.html
 
 * Demonstrate with this query:
 */
